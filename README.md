@@ -1,8 +1,8 @@
 # vue-components
 
-This project was used when making [this blog post](). 
+This project was used when making [this blog post](https://blog.brianmulaa.com/posts/reusable-customizable-form-components-vue/). 
 
-First clone the repo by running `git clone `
+First clone the repo by running `git clone https://github.com/brayo333/vue-components.git`
 
 ## Project Setup
 
@@ -10,14 +10,8 @@ First clone the repo by running `git clone `
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Start development server
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
