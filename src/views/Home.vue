@@ -3,7 +3,7 @@ import Input from "../components/Input.vue";
 import Button from "../components/Button.vue";
 import { Icon } from "@iconify/vue";
 
-let message= "Value from v-model";
+let message= "Value in v-model";
 
 const doSomething = () => {
   alert("Hello there!");
@@ -22,7 +22,7 @@ const doSomething = () => {
         color="var(--appColor-black)"
         placeholder="Hello there"
         border="1px solid var(--appColor-main)"
-        v-model:value="message"
+        v-model="message"
       />
     </div>
 

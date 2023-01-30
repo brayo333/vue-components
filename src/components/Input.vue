@@ -9,7 +9,7 @@ interface Props {
     min?: string | number | undefined;
     max?: string | number | undefined;
     step?: number;
-    value?: any;
+    modelValue?: string | number | undefined;
     option?: "circle" | "rounded" | "slightlyRounded" | "box" | "line";
     border?: string;
     width?: string;
@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
     min: undefined,
     max: undefined,
     step: undefined,
-    value: "",
+    modelValue: "",
     option: undefined,
     border: undefined,
     width: undefined,
@@ -43,11 +43,12 @@ const props = withDefaults(defineProps<Props>(), {
     readonly: false,
 });
 
-// defineEmits(['update:props.value'])
-const emit = defineEmits(['update:props.value'])
+const emit = defineEmits<{
+    (event: "update:modelValue", payload: string | number | undefined): void;
+}>();
 
 const updateValue = (e: Event) => {
-  emit('update:props.value', (e.target as HTMLInputElement).value)
+    emit("update:modelValue", (e.target as HTMLInputElement).value);
 };
 
 // we will use the following styleObject variable for the input's style attribute
@@ -70,10 +71,12 @@ const styleObject = reactive({
         :min="props.min"
         :max="props.max"
         :step="props.step"
-        :value="props.value"
+        :value="modelValue"
         @input="updateValue"
         :placeholder="props.placeholder"
-        :class="['inputStyle', `inputStyle--${props.option}`, props.class].join(' ')"
+        :class="
+            ['inputStyle', `inputStyle--${props.option}`, props.class].join(' ')
+        "
         :readOnly="props.readonly"
         :style="styleObject"
     />
