@@ -15,3 +15,11 @@ npm install
 ```sh
 npm run dev
 ```
+
+## Explore components with storybook
+
+Run the following to view components in Storybook:
+
+```sh
+npm run storybook
+``
