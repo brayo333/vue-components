@@ -2,11 +2,16 @@
 import Input from "../components/Input.vue";
 import Button from "../components/Button.vue";
 import { Icon } from "@iconify/vue";
+import { ref } from "vue";
 
-let message= "Value in v-model";
+let message = "Value in v-model";
+
+const buttonTest = ref("");
 
 const doSomething = () => {
-  alert("Hello there!");
+  // alert("Hello there!");
+
+  buttonTest.value = "Hello there!";
 };
 </script>
 
@@ -43,6 +48,7 @@ const doSomething = () => {
     <div class="pt-5">
       <Button
         type="button"
+        id="button"
         class=""
         option="slightlyRounded"
         label="Get started"
@@ -51,6 +57,8 @@ const doSomething = () => {
         @clicked="doSomething"
       />
     </div>
+
+    <p id="test-button">{{ buttonTest }}</p>
 
     <div class="pt-5">
       <Button
